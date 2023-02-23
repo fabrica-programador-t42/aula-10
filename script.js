@@ -40,9 +40,15 @@ async function buscarPokemonPorUrl(url){
     const result = await fetch(url)
     const item = await result.json()
     document.getElementById('lista').innerHTML += `
-        <div class="card">
-            <h2> ${item.name.toUpperCase()}</h2>
-            <img src="${item.sprites.front_default}">
+
+    <div class="card mx-3 my-3 border border-primary" style="width: 18rem;">
+        <img src="${item.sprites.front_default}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"> ${item.name.toUpperCase()}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-success">Go somewhere</a>
         </div>
+    </div>
     `
 }
